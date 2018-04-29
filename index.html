@@ -1,34 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Car Rental</title>
-	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="container">
-		<h1>Car Rental</h1>
-		<div class="sedan-section">
-			<img class="carImg" src="img/sedan.png" alt="Sedan">
-			<button id="sedanBtn" type="button" onclick="carRental.updateAvailability('sedan')">Rent a Sedan</button>
-			<div id="sedanCount" class="sedan-count inline"></div>
-			<div id="sedanPrice" class="sedan-price inline"></div>
-		</div>
-		<div class="suv-section">
-			<img class="carImg" src="img/suv.png" alt="SUV">
-			<button id="suvBtn" type="button" onclick="carRental.updateAvailability('suv')">Rent an SUV</button>
-			<div id="suvCount" class="suv-count inline"></div>
-			<div id="suvPrice" class="suv-price inline"></div>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Vehicle</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/foundation-datepicker.css">
+  </head>
+  <body>
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text"><img class="logo" src="img/rentfast-logo.svg"></img></li>
+          <!--<li class="has-submenu">-->
+          <!--  <a href="#">Sedans</a>-->
+          <!--  <ul class="submenu menu vertical" data-submenu>-->
+          <!--    <li><a href="#">Sedans</a></li>-->
+          <!--    <li><a href="#">SUVs</a></li>-->
+          <!--    <li><a href="#">Sports Cars</a></li>-->
+          <!--  </ul>-->
+          <!--</li>-->
+          <!--<li><a href="#">SUVs</a></li>-->
+          <!--<li><a href="#">Sports Cars</a></li>-->
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="button">Search</button></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+    <br>
+  <article class="grid-container">
+    <div class="grid-x cell">
+      <nav aria-label="You are here:" role="navigation">
+        <!--<ul class="breadcrumbs">-->
+        <!--  <li><a href="#">Home</a></li>-->
+        <!--  <li><a href="#">Features</a></li>-->
+        <!--  <li class="disabled">Gene Splicing</li>-->
+        <!--  <li>-->
+        <!--    <span class="show-for-sr">Current: </span> Cloning-->
+        <!--  </li>-->
+        <!--</ul>-->
+      </nav>
+    </div>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <img class="thumbnail thumbnail-padding" src="img/sports.png">
+        <div class="grid-x grid-padding-x small-up-4">
+          <div class="cell">
+            <img src="img/sedan.png">
+          </div>
+          <div class="cell">
+            <img src="img/suv.png">
+          </div>
+          <!--<div class="cell">-->
+          <!--  <img src="https://placehold.it/250x200">-->
+          <!--</div>-->
+          <!--<div class="cell">-->
+          <!--  <img src="https://placehold.it/250x200">-->
+          <!--</div>-->
+        </div>
+      </div>
+      <div class="medium-6 large-5 cell large-offset-1">
+        <h3>2018 BMW M3</h3>
+        <p>Since its inception, the BMW M3 has embodied the very soul of motorsport. This icon continues to redefine the limits of performance with unprecedented precision and awe-inspiring grip to provide dynamic responsiveness that pushes the boundaries of technological perfection.</p>
 
-		</div>
-		<div class="sports-section">
-			<img class="carImg" src="img/sports.png" alt="Sports">
-			<button id="sportsBtn" type="button" onclick="carRental.updateAvailability('sports')">Rent a Sports Car</button>
-			<div id="sportsCount" class="sports-count inline"></div>
-			<div id="sportsPrice" class="sports-price inline"></div>
-		</div>
-	</div>
-</body>
-<script src="carRental.js"></script>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>PICK-UP&nbsp;
+				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29">Change</a>
+			</th>
+			<th>RETURN&nbsp;
+				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30">Change</a>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td id="startDate">2018-04-29</td>
+			<td id="endDate">2018-04-30</td>
+		</tr>
+	</tbody>
+</table>
+<div class="alert alert-box"  style="display:none;" id="alert">	<strong>Oh snap!</strong>
+</div>
+        <label>Optional Insurance
+        <select>
+          <option value="select-ins">-- Select an option --</option>
+          <option value="no-ins">I do not need additional insurance.</option>
+          <option value="basic-ins">Basic Insurance (+$2.50/day)</option>
+          <option value="premium-ins">Premium Insurance (+$10/day)</option>
+        </select>
+        </label>
+        
+        <div class="pricing-section">
+          <div id="sportsCount" class="sports-count"></div>
+          <div id="daysSelected" class="days-selected">7 days selected</div>
+  			  <div id="sportsPrice" class="sports-price price"></div>
+  			  <div id="subTotal" class="subtotal">Subtotal: $190</div>
+        </div>
+
+        <!--<div class="grid-x">-->
+        <!--  <div class="small-3 cell">-->
+        <!--    <label for="middle-label" class="middle">Quantity</label>-->
+        <!--  </div>-->
+        <!--  <div class="small-9 cell">-->
+        <!--    <input type="text" id="middle-label" placeholder="One fish two fish">-->
+        <!--  </div>-->
+        <!--</div>-->
+
+        <a id="rentBtn" href="#" class="button large expanded" onclick="carRental.updateAvailability('sports')">Rent Now</a>
+        
+        <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+
+          <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <h2 id="modalTitle">Awesome. I have it.</h2>
+          <p class="lead">Your couch.  It is mine.</p>
+          <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+          </div>
+
+        <div class="small secondary expanded button-group">
+            <a class="button">Facebook</a>
+            <a class="button">Twitter</a>
+            <a class="button">Email</a>
+          </div>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="grid-x align-justify align-middle">
+      <div class="small-12 medium-shrink cell">
+        <ul class="menu">
+          <li class="align-self-middle">Rent a Vehicle</li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="small-12 medium-shrink cell">
+        <span>Rent a Vehicle | 2018</span>
+      </div>
+    </div>
+  </article>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/vendor/foundation.reveal.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/carRental.js"></script>
+    <script src="js/foundation-datepicker.js"></script>
+  </body>
 </html>

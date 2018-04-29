@@ -1,0 +1,23 @@
+.logo{
+    width: 150px;
+    height: auto;
+}
+
+.pricing-section{
+    display: block;
+    text-align: right;
+    margin: 20px 0;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.thumbnail-padding{
+    padding: 50px;
+}
+
+.no-margin{
+    margin: 0;
+}
