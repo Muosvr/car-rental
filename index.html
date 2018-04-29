@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Car Rental</title>
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Car Rental</h1>
+		<div class="sedan-section">
+			<img class="carImg" src="img/sedan.png" alt="Sedan">
+			<button id="sedanBtn" type="button" onclick="carRental.updateAvailability('sedan')">Rent a Sedan</button>
+			<div id="sedanCount" class="sedan-count inline"></div>
+			<div id="sedanPrice" class="sedan-price inline"></div>
+		</div>
+		<div class="suv-section">
+			<img class="carImg" src="img/suv.png" alt="SUV">
+			<button id="suvBtn" type="button" onclick="carRental.updateAvailability('suv')">Rent an SUV</button>
+			<div id="suvCount" class="suv-count inline"></div>
+			<div id="suvPrice" class="suv-price inline"></div>
+
+		</div>
+		<div class="sports-section">
+			<img class="carImg" src="img/sports.png" alt="Sports">
+			<button id="sportsBtn" type="button" onclick="carRental.updateAvailability('sports')">Rent a Sports Car</button>
+			<div id="sportsCount" class="sports-count inline"></div>
+			<div id="sportsPrice" class="sports-price inline"></div>
+		</div>
+	</div>
+</body>
+<script src="carRental.js"></script>
+</html>

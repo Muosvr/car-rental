@@ -1,0 +1,46 @@
+*{
+	font-family: 'Poppins', sans-serif;
+}
+
+h1{
+	text-align: center;
+}
+
+.container{
+	width: 500px;
+	display: block;
+	margin: 0 auto;
+}
+
+button {
+    background: #c8102e;
+    padding: 10px 30px;
+    border: 2px solid #c8102e;
+    border-bottom: 4px solid #b00f29;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+/*.inline{
+	display: inline-block;
+}
+*/
+.sedan-section,
+.suv-section,
+.sports-section{
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.carImg{
+	width: 200px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
