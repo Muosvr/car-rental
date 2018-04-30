@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent a Vehicle</title>
+    <link rel="icon" href="img/favicon-car.ico">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/foundation-datepicker.css">
@@ -78,10 +79,10 @@
 	<thead>
 		<tr>
 			<th>PICK-UP&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29">Change</a>
+				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29" onclick="carRental.numberOfDays()">Change</a>
 			</th>
 			<th>RETURN&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30">Change</a>
+				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30" onclick="carRental.numberOfDays()">Change</a>
 			</th>
 		</tr>
 	</thead>
@@ -95,16 +96,21 @@
 <div class="alert alert-box"  style="display:none;" id="alert">	<strong>Oh snap!</strong>
 </div>
         <label>Optional Insurance
-        <select>
-          <option value="select-ins">-- Select an option --</option>
-          <option value="no-ins">I do not need additional insurance.</option>
-          <option value="basic-ins">Basic Insurance (+$2.50/day)</option>
-          <option value="premium-ins">Premium Insurance (+$10/day)</option>
+        <select id="ins-dropdown" onclick="carRental.dropDownTest()">
+          <option id="select-ins" value="select-ins">-- Select an option --</option>
+          <option id="no-ins" value="no-ins">I do not need additional insurance.</option>
+          <option id="basic-ins" value="basic-ins">Basic Insurance (+$15/day)</option>
+          <option id="prem-ins" value="prem-ins">Premium Insurance (+$30/day)</option>
         </select>
         </label>
         
+        <!--This is a test-->
+        <!--<button onclick="myFunction()">Click me</button>-->
+        <!--This is a test-->
+        
         <div class="pricing-section">
           <div id="sportsCount" class="sports-count"></div>
+          <div id="choicePicked">Test</div>
           <div id="daysSelected" class="days-selected">7 days selected</div>
   			  <div id="sportsPrice" class="sports-price price"></div>
   			  <div id="subTotal" class="subtotal">Subtotal: $190</div>
@@ -137,7 +143,6 @@
           </div>
         </div>
     </div>
-    
     <hr>
 
     <div class="grid-x align-justify align-middle">
