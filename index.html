@@ -60,12 +60,12 @@
           <div class="cell">
             <img src="img/suv.png">
           </div>
-          <!--<div class="cell">-->
-          <!--  <img src="https://placehold.it/250x200">-->
-          <!--</div>-->
-          <!--<div class="cell">-->
-          <!--  <img src="https://placehold.it/250x200">-->
-          <!--</div>-->
+          <div class="cell">
+            <img src="img/sedan.png">
+          </div>
+          <div class="cell">
+            <img src="img/suv.png">
+          </div>
         </div>
       </div>
       <div class="medium-6 large-5 cell large-offset-1">
@@ -79,10 +79,10 @@
 	<thead>
 		<tr>
 			<th>PICK-UP&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29" onclick="carRental.numberOfDays()">Change</a>
+				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29" onblur="carRental.displayDays()">Change</a>
 			</th>
 			<th>RETURN&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30" onclick="carRental.numberOfDays()">Change</a>
+				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30" onblur="carRental.displayDays()">Change</a>
 			</th>
 		</tr>
 	</thead>
@@ -96,7 +96,7 @@
 <div class="alert alert-box"  style="display:none;" id="alert">	<strong>Oh snap!</strong>
 </div>
         <label>Optional Insurance
-        <select id="ins-dropdown" onchange="carRental.dropDownTest()">
+        <select id="ins-dropdown" onchange="carRental.displayInsurance()">
           <option id="select-ins" value="select-ins">-- Select an option --</option>
           <option id="no-ins" value="no-ins">No Additional Insurance</option>
           <option id="basic-ins" value="basic-ins">Basic Insurance (+$15/day)</option>
@@ -113,7 +113,7 @@
           <div id="choicePicked"></div>
           <div id="daysSelected" class="days-selected">1 day selected</div>
   			  <div id="sportsPrice" class="sports-price price"></div>
-  			  <div id="subTotal" class="subtotal">Subtotal: $190</div>
+  			  <div id="subTotal" class="subtotal"></div>
         </div>
 
         <!--<div class="grid-x">-->

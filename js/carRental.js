@@ -48,28 +48,37 @@ var carRental = {
     
     },
     
+    // This is a test to show that a value has been passed to JS and then sent back to HTML to update its content
     displayInsurance: function(){
-    	
-    	var insDropdown = document.getElementById('ins-dropdown');
-    	// var selectedOption = insDropdown.options[selectedOption.selectedIndex].value;
-    	// ^ this was throwing an error in the console
-
-    	
-    	console.log('testing displayInsurance');
-    	
-    	var basicIns = document.getElementById('basic-ins');
-    	var premiumIns = document.getElementById('prem-ins');
-    	
-    	if(insDropdown.value == "basic-ins")
-    		document.getElementById('subTotal').innerHTML = carRental.sports.rentalPrice + 15;
-    		
-    	if(insDropdown.value == "prem-ins")
-    		document.getElementById('subTotal').innerHTML = carRental.sports.rentalPrice + 30;
-    	
-    	
-    },
     
-    numberOfDays: function() {
+        //variable for insurance dropdown    
+        var dropdown = document.getElementById("ins-dropdown");
+        
+        //get dropdown box choice from user
+    	var choice = dropdown.options[dropdown.selectedIndex].text;
+    	
+    	 if(choice == "-- Select an option --"){
+    	    document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
+    	 }
+    	 
+    	 if(choice == "No Additional Insurance"){
+            document.getElementById('choicePicked').innerHTML = choice;
+            document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
+    	 }
+    	
+    	 if(choice == "Basic Insurance (+$15/day)"){
+    		document.getElementById('choicePicked').innerHTML = choice;
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 15) * parseInt(carRental.displayDays());
+    	 }
+    		
+    	 if(choice == "Premium Insurance (+$30/day)"){
+    		document.getElementById('choicePicked').innerHTML = choice;
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 30);
+    	 }
+    		
+     },
+     
+     displayDays: function() {
 
         // Get dates from html
         var date1 = new Date(document.getElementById("startDate").innerHTML);
@@ -97,31 +106,6 @@ var carRental = {
         document.getElementById("daysSelected").innerHTML = `Days Selected: ${daysTotal}`;
         // return daysTotal;
     },
-    
-    // This is a test to show that a value has been passed to JS and then sent back to HTML to update its content
-    dropDownTest: function(){
-    
-    //variable for insurance dropdown    
-    var dropdown = document.getElementById("ins-dropdown");
-        //get dropdown box choice from user
-    	var choice = dropdown.options[dropdown.selectedIndex].text;
-    	
-    	 if(choice == "Basic Insurance (+$15/day)"){
-    		document.getElementById('choicePicked').innerHTML = choice;
-    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 15) * parseInt(carRental.numberOfDays());
-    	 }
-    		
-    	 if(choice == "Premium Insurance (+$30/day)"){
-    		document.getElementById('choicePicked').innerHTML = choice;
-    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 30);
-    	 }
-    		
-    	 if(choice == "No Additional Insurance"){
-            document.getElementById('choicePicked').innerHTML = choice;
-            document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
-    	 }
-    		
-    },
 
     
     displaySubTotal: function(){
@@ -132,6 +116,6 @@ carRental.displayAvailability();
 carRental.displayPrice();
 carRental.displaySubTotal();
 carRental.displayInsurance();
-carRental.dropDownTest();
+// carRental.dropDownTest();
 
     
