@@ -15,7 +15,7 @@ var carRental = {
 	},
 
 	sports: {
-		rentalPrice: 150,
+		rentalPrice: 149.99,
 		numAvailable: 6,
 
     },
@@ -53,6 +53,8 @@ var carRental = {
     	var insDropdown = document.getElementById('ins-dropdown');
     	// var selectedOption = insDropdown.options[selectedOption.selectedIndex].value;
     	// ^ this was throwing an error in the console
+
+    	
     	console.log('testing displayInsurance');
     	
     	var basicIns = document.getElementById('basic-ins');
@@ -72,8 +74,8 @@ var carRental = {
         // Get dates from html
         var date1 = new Date(document.getElementById("startDate").innerHTML);
         var date2 = new Date(document.getElementById("endDate").innerHTML);
-        console.log('date 1 = ' + date1);
-        console.log('date 2 = ' + date2);
+        // console.log('date 1 = ' + date1);
+        // console.log('date 2 = ' + date2);
         
         //Get 1 day in milliseconds
         var one_day=1000*60*60*24;
@@ -81,16 +83,16 @@ var carRental = {
         // Convert both dates to milliseconds
         var date1_ms = date1.getTime();
         var date2_ms = date2.getTime();
-        console.log('date 1 ms= ' + date1_ms);
-        console.log('date 2 ms= ' + date2_ms);
+        // console.log('date 1 ms= ' + date1_ms);
+        // console.log('date 2 ms= ' + date2_ms);
         
         // Calculate the difference in milliseconds
         var difference_ms = date2_ms - date1_ms;
-        console.log('difference_ms = ' + difference_ms);
+        // console.log('difference_ms = ' + difference_ms);
         
         // Convert back to days
         var daysTotal = Math.round(difference_ms/one_day); 
-        console.log("daysTotal = " + daysTotal);
+        // console.log("daysTotal = " + daysTotal);
         
         document.getElementById("daysSelected").innerHTML = `Days Selected: ${daysTotal}`;
         // return daysTotal;
@@ -98,12 +100,27 @@ var carRental = {
     
     // This is a test to show that a value has been passed to JS and then sent back to HTML to update its content
     dropDownTest: function(){
+    
+    //variable for insurance dropdown    
     var dropdown = document.getElementById("ins-dropdown");
+        //get dropdown box choice from user
     	var choice = dropdown.options[dropdown.selectedIndex].text;
     	
-    	 if (choice != "-- Select an option --"){
-    		document.getElementById('choicePicked').innerHTML = "You picked: "+choice;
-    	 }	
+    	 if(choice == "Basic Insurance (+$15/day)"){
+    		document.getElementById('choicePicked').innerHTML = choice;
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 15) * parseInt(carRental.numberOfDays());
+    	 }
+    		
+    	 if(choice == "Premium Insurance (+$30/day)"){
+    		document.getElementById('choicePicked').innerHTML = choice;
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 30);
+    	 }
+    		
+    	 if(choice == "No Additional Insurance"){
+            document.getElementById('choicePicked').innerHTML = choice;
+            document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
+    	 }
+    		
     },
 
     

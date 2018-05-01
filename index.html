@@ -96,9 +96,9 @@
 <div class="alert alert-box"  style="display:none;" id="alert">	<strong>Oh snap!</strong>
 </div>
         <label>Optional Insurance
-        <select id="ins-dropdown" onclick="carRental.dropDownTest()">
+        <select id="ins-dropdown" onchange="carRental.dropDownTest()">
           <option id="select-ins" value="select-ins">-- Select an option --</option>
-          <option id="no-ins" value="no-ins">I do not need additional insurance.</option>
+          <option id="no-ins" value="no-ins">No Additional Insurance</option>
           <option id="basic-ins" value="basic-ins">Basic Insurance (+$15/day)</option>
           <option id="prem-ins" value="prem-ins">Premium Insurance (+$30/day)</option>
         </select>
@@ -110,8 +110,8 @@
         
         <div class="pricing-section">
           <div id="sportsCount" class="sports-count"></div>
-          <div id="choicePicked">Test</div>
-          <div id="daysSelected" class="days-selected">7 days selected</div>
+          <div id="choicePicked"></div>
+          <div id="daysSelected" class="days-selected">1 day selected</div>
   			  <div id="sportsPrice" class="sports-price price"></div>
   			  <div id="subTotal" class="subtotal">Subtotal: $190</div>
         </div>
@@ -126,15 +126,6 @@
         <!--</div>-->
 
         <a id="rentBtn" href="#" class="button large expanded" onclick="carRental.updateAvailability('sports')">Rent Now</a>
-        
-        <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
-
-          <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-          <h2 id="modalTitle">Awesome. I have it.</h2>
-          <p class="lead">Your couch.  It is mine.</p>
-          <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-          </div>
 
         <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
