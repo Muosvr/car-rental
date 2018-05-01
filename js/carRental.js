@@ -57,23 +57,26 @@ var carRental = {
         //get dropdown box choice from user
     	var choice = dropdown.options[dropdown.selectedIndex].text;
     	
+    	//get number of days selected
+    	var tripDays = document.getElementById('daysSelected').innerHTML;
+    	
     	 if(choice == "-- Select an option --"){
-    	    document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
+    	    document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice) * parseInt(tripDays);
     	 }
     	 
     	 if(choice == "No Additional Insurance"){
             document.getElementById('choicePicked').innerHTML = choice;
-            document.getElementById('subTotal').innerHTML = 'Subtotal: $' + carRental.sports.rentalPrice;
+            document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice) * parseInt(tripDays);
     	 }
     	
     	 if(choice == "Basic Insurance (+$15/day)"){
     		document.getElementById('choicePicked').innerHTML = choice;
-    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 15) * parseInt(carRental.displayDays());
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 15) * parseInt(tripDays);
     	 }
     		
     	 if(choice == "Premium Insurance (+$30/day)"){
     		document.getElementById('choicePicked').innerHTML = choice;
-    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 30);
+    		document.getElementById('subTotal').innerHTML = 'Subtotal: $' + (carRental.sports.rentalPrice + 30) * parseInt(tripDays);
     	 }
     		
      },
@@ -103,19 +106,15 @@ var carRental = {
         var daysTotal = Math.round(difference_ms/one_day); 
         // console.log("daysTotal = " + daysTotal);
         
-        document.getElementById("daysSelected").innerHTML = `Days Selected: ${daysTotal}`;
+        document.getElementById("daysSelected").innerHTML = `${daysTotal}`;
         // return daysTotal;
     },
 
-    
-    displaySubTotal: function(){
-    },
 }
 
 carRental.displayAvailability();
 carRental.displayPrice();
-carRental.displaySubTotal();
+// carRental.displaySubTotal();
 carRental.displayInsurance();
-// carRental.dropDownTest();
 
     
