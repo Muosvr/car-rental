@@ -37,7 +37,13 @@ var carRental = {
     displayAvailability: function(){
     	// document.getElementById('sedanCount').innerHTML = carRental.sedan.numAvailable + ' available';
     	// document.getElementById('suvCount').innerHTML = carRental.suv.numAvailable + ' available';
-    	document.getElementById('sportsCount').innerHTML = carRental.sports.numAvailable + ' available';
+    	if(carRental.sports.numAvailable < 5){
+    	document.getElementById('sportsCount').innerHTML = `Only ${carRental.sports.numAvailable} left!`;
+    	document.getElementById('sportsCount').style.color = 'red';
+    	document.getElementById('sportsCount').classList.add('animated', 'flash', 'slideInRight')
+    	} else {
+    	    document.getElementById('sportsCount').innerHTML = `${carRental.sports.numAvailable} available`;
+    	}
     },
 
     displayPrice: function(){

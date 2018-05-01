@@ -4,18 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent a Vehicle</title>
+    <title>&#9889; RentFast</title>
     <link rel="icon" href="img/favicon-car.ico">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/foundation-datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
   </head>
   <body>
     <!-- Start Top Bar -->
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text"><img class="logo" src="img/rentfast-logo.svg"></img></li>
+          <li class="menu-text"><img class="logo" src="img/rentfast-logo-blue.svg"></img></li>
           <!--<li class="has-submenu">-->
           <!--  <a href="#">Sedans</a>-->
           <!--  <ul class="submenu menu vertical" data-submenu>-->
@@ -29,10 +31,10 @@
         </ul>
       </div>
       <div class="top-bar-right">
-        <ul class="menu">
-          <li><input type="search" placeholder="Search"></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
+        <!--<ul class="menu">-->
+        <!--  <li><input type="search" placeholder="Search"></li>-->
+        <!--  <li><button type="button" class="button">Search</button></li>-->
+        <!--</ul>-->
       </div>
     </div>
     <!-- End Top Bar -->
@@ -72,17 +74,14 @@
         <h3>2018 BMW M3</h3>
         <p>Since its inception, the BMW M3 has embodied the very soul of motorsport. This icon continues to redefine the limits of performance with unprecedented precision and awe-inspiring grip to provide dynamic responsiveness that pushes the boundaries of technological perfection.</p>
 
-
-
-
 <table class="table">
 	<thead>
 		<tr>
 			<th>PICK-UP&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29" onblur="carRental.displayDays()">Change</a>
+				<a href="#" class="button tiny no-margin" id="dp4" data-date-format="yyyy-mm-dd" data-date="2018-04-29" onblur="carRental.displayDays()">SELECT</a>
 			</th>
-			<th>RETURN&nbsp;
-				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30" onblur="carRental.displayDays()">Change</a>
+			<th>DROP-OFF&nbsp;
+				<a href="#" class="button tiny no-margin" id="dp5" data-date-format="yyyy-mm-dd" data-date="2018-04-30" onblur="carRental.displayDays()">SELECT</a>
 			</th>
 		</tr>
 	</thead>
@@ -111,7 +110,7 @@
         <div class="pricing-section">
           <div id="sportsCount" class="sports-count"></div>
           <div id="choicePicked"></div>
-          <div class="days-selected">Day(s) selected: <span id="daysSelected">1</span></div>
+          <div class="days-selected">Days selected: <span id="daysSelected">1</span></div>
   			  <div id="sportsPrice" class="sports-price price"></div>
   			  <div id="subTotal" class="subtotal"></div>
         </div>
@@ -125,7 +124,7 @@
         <!--  </div>-->
         <!--</div>-->
 
-        <a id="rentBtn" href="#" class="button large expanded" onclick="carRental.updateAvailability('sports')">Rent Now</a>
+        <a id="rentBtn" href="#" class="button large expanded" onclick="carRental.updateAvailability('sports')">RENT NOW</a>
 
         <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
@@ -139,7 +138,7 @@
     <div class="grid-x align-justify align-middle">
       <div class="small-12 medium-shrink cell">
         <ul class="menu">
-          <li class="align-self-middle">Rent a Vehicle</li>
+          <li class="align-self-middle">RentFast</li>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
@@ -147,7 +146,7 @@
       </div>
 
       <div class="small-12 medium-shrink cell">
-        <span>Rent a Vehicle | 2018</span>
+        <span>RentFast | Copyright 2018</span>
       </div>
     </div>
   </article>

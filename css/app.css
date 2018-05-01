@@ -1,3 +1,7 @@
+body, h1, h2, h3, h4, h5, h6, p, a{
+    font-family: 'Poppins', sans-serif;
+}
+
 .logo{
     width: 150px;
     height: auto;
@@ -20,4 +24,13 @@
 
 .no-margin{
     margin: 0;
+}
+
+#sportsCount {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.red{
+    color: red;
 }

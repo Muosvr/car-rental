@@ -24,6 +24,8 @@ Framework: https://github.com/zurb/foundation-sites
 
 Datepicker: https://github.com/najlepsiwebdesigner/foundation-datepicker
 
+Animate.css: https://github.com/daneden/animate.css/blob/master/animate.css
+
 
 
 
